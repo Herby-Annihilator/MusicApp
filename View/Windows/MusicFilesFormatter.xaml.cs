@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MusicApp.View.InterfaceLanguage;
+using MusicApp.ViewModels.Base;
 
 namespace MusicApp.View.Windows
 {
