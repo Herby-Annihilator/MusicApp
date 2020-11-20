@@ -28,6 +28,7 @@ namespace MusicApp.ViewModels
 			Conductor.FileInfos.Add(new System.IO.FileInfo("C:\\Projects\\VisualStudio\\Hobby\\MusicApp\\App.xaml"));
 
 			StartProcedureCommand = new LambdaCommand(OnStartProcedureCommandExecuted, CanStartProcedureCommandExecute);
+			ChangeCreationDateCommand = new LambdaCommand(OnChangeCreationDateCommandExecuted, CanChangeCreationDateCommandExecute);
 		}
 
 		private bool limitFilesLenght = false;
@@ -63,6 +64,12 @@ namespace MusicApp.ViewModels
 		private string txtLimitFilesLenght = "";
 		public string TxtLimitFilesLenght { get => txtLimitFilesLenght; set => Set(ref txtLimitFilesLenght, value); }
 
+		private string chosenFileName;
+		public string ChosenFileName { get => chosenFileName; set => Set(ref chosenFileName, value); }
+
+		private bool allowRenameFile = false;
+		public bool AllowRenameFile { get => allowRenameFile; set => Set(ref allowRenameFile, value); }
+
 		#region Commands
 		public ICommand StartProcedureCommand { get; }
 		private void OnStartProcedureCommandExecuted(object param)
@@ -86,6 +93,16 @@ namespace MusicApp.ViewModels
 			{
 				return false;
 			}
+			return true;
+		}
+
+		public ICommand ChangeCreationDateCommand { get; }
+		private void OnChangeCreationDateCommandExecuted(object param)
+		{
+
+		}
+		private bool CanChangeCreationDateCommandExecute(object param)
+		{
 			return true;
 		}
 		#endregion

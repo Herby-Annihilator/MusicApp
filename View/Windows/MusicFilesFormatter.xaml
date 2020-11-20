@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MusicApp.View.Windows"
         xmlns:vm="clr-namespace:MusicApp.ViewModels"
         mc:Ignorable="d"
-        Title="MusicFilesFormatter" Height="630" Width="903">
+        Title="MusicFilesFormatter" Height="630" Width="903" Background="#FF1F1F1F" Foreground="#FF744DA9">
     <Window.DataContext>
         <vm:MusicFormatterViewModel/>
     </Window.DataContext>
@@ -47,7 +47,7 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="15,10">
                             <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxLimitFileLenght}"
-                                      IsChecked="{Binding Path=LimitFilesLenght}"/>
+                                      IsChecked="{Binding Path=LimitFilesLenght}" Foreground="#FF744DA9"/>
                             <TextBox MinWidth="100" Margin="10, 0" IsEnabled="{Binding Path=TxtBoxLimitFilesLenghtEnable}"
                                      Text="{Binding Path=TxtLimitFilesLenght, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
@@ -55,21 +55,21 @@
                             <GroupBox Header="{Binding Path=FormatterInterfaceLanguage.GroupBoxChangeAlphabet}">
                                 <StackPanel>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonCyrillic}"
-                                                 IsChecked="{Binding Path=Cyrillic}"/>
+                                                 IsChecked="{Binding Path=Cyrillic}" Foreground="#FF744DA9"/>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonLatin}"
-                                                 IsChecked="{Binding Path=Latin}"/>
+                                                 IsChecked="{Binding Path=Latin}" Foreground="#FF744DA9"/>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonDefault}" 
-                                                 IsChecked="{Binding Path=AlphabetDefault}"/>
+                                                 IsChecked="{Binding Path=AlphabetDefault}" Foreground="#FF744DA9"/>
                                 </StackPanel>
                             </GroupBox>
                             <GroupBox Header="{Binding Path=FormatterInterfaceLanguage.GroupBoxChangeRegister}">
                                 <StackPanel>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonUppercase}"
-                                                 IsChecked="{Binding Path=Uppercase}"/>
+                                                 IsChecked="{Binding Path=Uppercase}" Foreground="#FF744DA9"/>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonLowercase}"
-                                                 IsChecked="{Binding Path=Lowercase}"/>
+                                                 IsChecked="{Binding Path=Lowercase}" Foreground="#FF744DA9"/>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonDefault}" 
-                                                 IsChecked="{Binding Path=RegisterDefault}"/>
+                                                 IsChecked="{Binding Path=RegisterDefault}" Foreground="#FF744DA9"/>
                                 </StackPanel>
                             </GroupBox>
                         </StackPanel>
@@ -82,25 +82,27 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="15,5">
                             <TextBlock Text="{Binding Path=FormatterInterfaceLanguage.TextBlockChosenFile}"/>
-                            <TextBox Width="220" Margin="5,0"/>
+                            <TextBox Width="220" Margin="5,0" Text="{Binding Path=ChosenFileName, UpdateSourceTrigger=PropertyChanged}"
+                                     IsEnabled="{Binding Path=AllowRenameFile}"/>
                         </StackPanel>
-                        <CheckBox Margin="15,5" Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxAllowFileRename}"/>
+                        <CheckBox Margin="15,5" Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxAllowFileRename}" Foreground="#FF744DA9"
+                                  IsChecked="{Binding Path=AllowRenameFile}"/>
                         <GroupBox Header="{Binding Path=FormatterInterfaceLanguage.GroupBoxAttributes}">
                             <WrapPanel Orientation="Horizontal" Margin="5,15">
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxArchive}" Margin="0,0,15,5"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxHidden}" Margin="0,0,15,5"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxTemporary}" Margin="0,0,15,5"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxSystem}" Margin="0,0,15,5"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxReadOnly}" Margin="0,0,15,5"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxCompressed}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxDirectory}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxEncrypted}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxIntegrityStream}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxNormal}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxNoScrubData}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxOffline}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxReparsePoint}" Margin="0,0,15,5" IsEnabled="False"/>
-                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxSparseFile}" Margin="0,0,15,5" IsEnabled="False"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxArchive}" Margin="0,0,15,5" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxHidden}" Margin="0,0,15,5" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxTemporary}" Margin="0,0,15,5" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxSystem}" Margin="0,0,15,5" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxReadOnly}" Margin="0,0,15,5" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxCompressed}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxDirectory}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxEncrypted}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxIntegrityStream}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxNormal}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxNoScrubData}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxOffline}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxReparsePoint}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
+                                <CheckBox Content="{Binding Path=FormatterInterfaceLanguage.CheckBoxSparseFile}" Margin="0,0,15,5" IsEnabled="False" Foreground="#FF744DA9"/>
                             </WrapPanel>
                         </GroupBox>
                         <StackPanel Orientation="Horizontal" Margin="15,5">
@@ -126,7 +128,7 @@
                               HorizontalGridLinesBrush="Black"
                               VerticalGridLinesBrush="LightGray"
                               AutoGenerateColumns="False"
-                              ItemsSource="{Binding Path=Conductor.FileInfos}">
+                              ItemsSource="{Binding Path=Conductor.FileInfos}" Background="#FF1F1F1F">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Имя" MinWidth="200" Binding="{Binding Path=Name}"/>
                             <DataGridTextColumn Header="Дата и время создания" Width="*" MaxWidth="150" 
