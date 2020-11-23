@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:MusicApp"
              StartupUri="View/Windows/MusicFilesFormatter.xaml">
     <Application.Resources>
-         
+        <DataTemplate x:Key="HeaderTemplate">
+            <TextBlock TextWrapping="Wrap" Text="{Binding}" TextAlignment="Center"/>
+        </DataTemplate>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="ContentTemplate" Value="{StaticResource HeaderTemplate}"/>
+        </Style>
     </Application.Resources>
 </Application>

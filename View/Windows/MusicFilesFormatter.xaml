@@ -52,7 +52,8 @@
                                      Text="{Binding Path=TxtLimitFilesLenght, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="15, 5">
-                            <GroupBox Header="{Binding Path=FormatterInterfaceLanguage.GroupBoxChangeAlphabet}">
+                            <GroupBox Header="{Binding Path=FormatterInterfaceLanguage.GroupBoxChangeAlphabet}"
+                                      Margin="0,0,10,0">
                                 <StackPanel>
                                     <RadioButton Content="{Binding Path=FormatterInterfaceLanguage.RadioButtonCyrillic}"
                                                  IsChecked="{Binding Path=Cyrillic}" Foreground="#FF744DA9"/>
@@ -132,20 +133,12 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Имя" MinWidth="200" Binding="{Binding Path=Name}"/>
                             <DataGridTextColumn Header="Дата и время создания" Width="*" MaxWidth="150" 
-                                                Binding="{Binding Path=CreationTime}">
-                                <DataGridTextColumn.HeaderStyle>
-                                    <Style TargetType="DataGridColumnHeader">
-                                        <Style.Setters>
-                                            <Setter Property="VerticalAlignment" Value="Center"/>
-                                            <Setter Property="Height" Value="40"/>
-                                        </Style.Setters>
-                                    </Style>
-                                </DataGridTextColumn.HeaderStyle>
+                                                Binding="{Binding Path=CreationTime, StringFormat=dd.MM.yyyy}">
                             </DataGridTextColumn>
                             <DataGridTextColumn Header="Дата и время последнего доступа" Width="*" MaxWidth="150"
-                                                Binding="{Binding Path=LastAccessTime}"/>
+                                                Binding="{Binding Path=LastAccessTime, StringFormat=dd.MM.yyyy}"/>
                             <DataGridTextColumn Header="Дата и время последней перезаписи" Width="*" MaxWidth="150"
-                                                Binding="{Binding Path=LastWriteTime}"/>
+                                                Binding="{Binding Path=LastWriteTime, StringFormat=dd.MM.yyyy}"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>
